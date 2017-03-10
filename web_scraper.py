@@ -17,21 +17,34 @@ def harvest(url):
     tree = html.fromstring(page.content)
     return tree
 
-def xpath_parse(tree):
-    '''XPath parsing function 
-    
-    '''
-    test1 = tree.xpath('/html/body/p[2]/font/b/text()')
-    test2 = tree.xpath('/html/body/p[46]/font/b/text()')
-    print test1
-    print test2
+
+def xpath_parser(tree, input_file):
+    '''XPath parsing function
+
+    read XPaths from txt file parse from tree and return list'''
+    with open(input_file) as xpaths_file:
+        return [tree.xpath(line) for line in xpaths_file]
+
+
+def write_to_file(parsed_data, output_file):
+    '''Write to File function
+
+    take list of parsed xpath data from xpath_parser and
+    wirte to output_file give as command argument'''
+    with open(output_file, 'w') as output_file:
+        for data in parsed_data:
+            output_file.write(str(data))
+            output_file.write('\n')
     return
+
 
 def main():
     '''Main Function
 
-    harvesting http://www.mit.edu/~xela/tao.html for first test'''
-    xpath_parse(harvest(argv[1]))
+    harvest page from url parse data from xpath in input file,
+    write to output_file'''
+
+    write_to_file(xpath_parser(harvest(argv[1]), argv[2]), argv[3])
 
 if __name__ == '__main__':
     main()

@@ -1,0 +1,8 @@
+['"When you have learned to snatch the error code\nfrom the trap frame, it will be time for you to leave."']
+[' "After three days without programming, life\nbecomes meaningless."']
+[' "When a program is being tested, it is too late\nto make design changes."']
+[' "A well-written program is its own Heaven; a\npoorly-written program is its own Hell."']
+[' "Though a program be but three lines long,\nsomeday it will have to be maintained."']
+[' "Let the programmers be many and the managers few\n-- then all will be productive."']
+[' "You can demonstrate a program for a corporate\nexecutive, but you can\'t make him computer literate."']
+[' "Time for you to leave."']
